@@ -1,5 +1,7 @@
 from tkinter.ttk import *
 from tkinter import *
+from PIL import Image as PILImage
+from PIL import ImageTk
 
 class Window(Tk):
     def __init__(self, title="Tk", size=[500, 400], pos=[100, 100]):
@@ -45,16 +47,12 @@ class H6(Label):
 class Strong(Label):
     def __init__(self, window, text="", size=10):
         super().__init__(window, text=text, font=("Sans Serif", size, "bold italic"))
-        
-window = Window()
-var1 = Bold(window, "Hi")
-var1.pack()
-var2 = Strong(window, text="Hi")
-var2.pack()
-H1(window, text="Hi").pack()
-H2(window, text="Hi").pack()
-H3(window, text="Hi").pack()
-H4(window, text="Hi").pack()
-H5(window, text="Hi").pack()
-H6(window, text="Hi").pack()
-window.mainloop()
+
+class Image(Label):
+    def __init__(self, window, path, size=None):
+        if size:
+            self.pil_img = PILImage.open(path).resize(size, PILImage.ANTIALIAS)
+        else:
+            self.pil_img = PILImage.open(path)
+        self.tk_img = ImageTk.PhotoImage(self.pil_img)
+        super().__init__(window, image=self.tk_img)
