@@ -2,7 +2,11 @@ from tkinter.ttk import *
 from tkinter import *
 from PIL import Image as PILImage
 from PIL import ImageTk
+import re
 
+def LoadMarkdown(window, file):
+    with open(file) as md:
+        pass
 class Window(Tk):
     def __init__(self, title="Tk", size=[500, 400], pos=[100, 100]):
         super().__init__()
@@ -61,3 +65,6 @@ class Text(Label):
     def __init__(self, window, text="", size=10, font="Sans Serif"):
         super().__init__(window, text=text, font=(font, size))
 
+window = Window()
+LoadMarkdown(window, "README.md").pack()
+window.mainloop()
