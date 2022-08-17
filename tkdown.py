@@ -56,3 +56,11 @@ class Image(Label):
             self.pil_img = PILImage.open(path)
         self.tk_img = ImageTk.PhotoImage(self.pil_img)
         super().__init__(window, image=self.tk_img)
+        
+class Text(Label):
+    def __init__(self, window, text="", size=10, font="Sans Serif"):
+        super().__init__(window, text=text, font=(font, size))
+
+window = Window()
+Text(window, "Hi").pack()
+window.mainloop()
