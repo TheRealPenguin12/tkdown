@@ -61,6 +61,3 @@ class Text(Label):
     def __init__(self, window, text="", size=10, font="Sans Serif"):
         super().__init__(window, text=text, font=(font, size))
 
-window = Window()
-Text(window, "Hi").pack()
-window.mainloop()
