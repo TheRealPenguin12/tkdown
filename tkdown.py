@@ -7,6 +7,7 @@ import re
 def LoadMarkdown(window, file):
     with open(file) as md:
         pass
+
 class Window(Tk):
     def __init__(self, title="Tk", size=[500, 400], pos=[100, 100]):
         super().__init__()

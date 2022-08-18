@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: tkdown
+Version: 1.0
+Summary: Markdown for Tkinter.
+Home-page: https://github.com/TheRealPenguin12/tkdown
+Author: _TheRealPenguin
+License: MIT
+Keywords: python python3 python-3 module tkinter app markdown easy awesome
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Utilities
+Classifier: Intended Audience :: Developers
+License-File: LICENSE

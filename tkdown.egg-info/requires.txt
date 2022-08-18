@@ -1,0 +1,6 @@
+tkinter
+re
+pillow
+
+[:python_version >= "2.0"]
+importlib-metadata
