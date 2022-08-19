@@ -26,7 +26,7 @@ class Syntax:
         BOLD = "(\*\*|\_\_)(\S+)(\*\*|\_\_)"
         ITALIC = "(\*|\_)(\S+)(\*|\_)"
     class HTML:
-        pass
+        MATCHANY = "(<(.*)>(.*)</([^br][A-Za-z0-9]+)>)"
 def LoadMarkdown(window, file):
     with open(file) as md:
         pass
