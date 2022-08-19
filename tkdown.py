@@ -4,6 +4,29 @@ from PIL import Image as PILImage
 from PIL import ImageTk
 import re
 
+class Syntax:
+    """Regex for markdown and html syntax"""
+    class Markdown:
+        H1 = "(#{1}\s)(.*)"
+	H2 = "(#{2}\s)(.*)"
+	H3 = "(#{3}\s)(.*)"
+	H4 = "(#{4}\s)(.*)"
+	H5 = "(#{5}\s)(.*)"
+	H6 = "(#{6}\s)(.*)"
+	LINK = "(\[.*\])(\((http)(?:s)?(\:\/\/).*\))"
+	IMAGE = "(\!)(\[(?:.*)?\])(\(.*(\.(jpg|png|gif|tiff|bmp))(?:(\s\"|\')(\w|\W|\d)+(\"|\'))?\)"
+        LISTITEM = "(^(\W{1})(\s)(.*)(?:$)?)+"
+        NUMBEREDLISTITEM = "(^(\d+\.)(\s)(.*)(?:$)?)+"
+        BLOCKQOUTE = "((^(\>{1})(\s)(.*)(?:$)?)+"
+        INLINECODE = "(\\`{1})(.*)(\\`{1})"
+        CODEBLOCK = "(\\`{3}\\n+)(.*)(\\n+\\`{3})"
+        UNDERLINEDHEADER = "(\=|\-|\*){3}"
+        EMAIL = "(\<{1})(\S+@\S+)(\>{1})" # Does not validate email!
+        TABLE = """(((\|)([a-zA-Z\d+\s#!@'"():;\\\/.\[\]\^<={$}>?(?!-))]+))+(\|))(?:\n)?((\|)(-+))+(\|)(\n)((\|)(\W+|\w+|\S+))+(\|$)"""
+        BOLD = "(\*\*|\_\_)(\S+)(\*\*|\_\_)"
+        ITALIC = "(\*|\_)(\S+)(\*|\_)"
+    class HTML:
+        pass
 def LoadMarkdown(window, file):
     with open(file) as md:
         pass
